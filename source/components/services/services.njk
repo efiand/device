@@ -1,0 +1,30 @@
+<section class="services">
+	<h2 class="visually-hidden">{{ title | punctify }}</h2>
+
+	<div class="centerer services__inner">
+		<ul class="services__tabs">
+			{% for tab in list %}
+				<li class="services__tab">
+					<a
+						class="button services__tab-link {{ 'services__tab-link--active' if loop.index === 1 }}"
+						href="{{ tab.href }}"
+						data-i="{{ loop.index0 }}"
+					>
+						{{ tab.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<ul class="services__contents">
+			{% for service in list %}
+				<li
+					class="services__content {{ 'services__content--active' if loop.index === 1 }}"
+					style="--mask: url(../images/sprite.min.svg#service-{{ loop.index }})"
+				>
+					<h3 class="heading services__title">{{ service.title }}</h3>
+					<div class="content">{{ service.content }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

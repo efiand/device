@@ -1,0 +1,7 @@
+.logo {
+	outline-offset: 4px;
+
+	& img {
+		display: block;
+	}
+}

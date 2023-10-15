@@ -1,0 +1,47 @@
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.breadcrumbs__item {
+	position: relative;
+	margin-top: 15px;
+	padding-right: 38px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 6px;
+		right: 14px;
+		width: 7px;
+		height: 7px;
+		background-color: currentColor;
+		mask-image: url("../images/sprite.min.svg#arrow");
+		opacity: 0.2;
+	}
+
+	&:last-child {
+		padding-right: 0;
+
+		&::after {
+			content: none;
+		}
+	}
+}
+
+.breadcrumbs__link {
+	text-decoration: none;
+	border-radius: 4px;
+
+	&[href] {
+		&:hover {
+			opacity: 0.6;
+		}
+
+		&:active {
+			opacity: 0.3;
+		}
+	}
+}

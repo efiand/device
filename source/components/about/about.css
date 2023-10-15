@@ -1,0 +1,31 @@
+.about {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 96px;
+	padding: 0 0 70px;
+}
+
+.about__section {
+	&::before {
+		content: "";
+		display: block;
+		width: 84px;
+		height: 7px;
+		margin: 0 0 40px;
+		background-color: currentColor;
+	}
+}
+
+.about__heading {
+	margin: 0 0 48px;
+}
+
+.about__footlink {
+	display: block;
+	max-width: 260px;
+	margin-top: 30px;
+
+	&--wide {
+		max-width: 270px;
+	}
+}

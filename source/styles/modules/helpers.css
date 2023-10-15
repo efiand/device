@@ -1,0 +1,28 @@
+.centerer {
+	box-sizing: border-box;
+	margin-right: 40px;
+	margin-left: 40px;
+
+	@media (--desktop) {
+		width: 1160px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.hidden,
+.no-js-hidden {
+	display: none;
+}
+
+.visually-hidden {
+	position: fixed;
+	transform: scale(0);
+}
+
+.heading {
+	font-weight: 800;
+	font-size: 50px;
+	line-height: 1;
+	font-family: var(--font-accent);
+}

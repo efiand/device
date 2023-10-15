@@ -1,0 +1,13 @@
+<ul class="categories {{ cssMix }}">
+	{% for category in categories %}
+		<li class="categories__item">
+			<a
+				class="categories__link"
+				href="{{ category.href }}"
+				style="--mask: url(../images/sprite.min.svg#category-{{ loop.index }})"
+			>
+				{{ category.title }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,28 @@
+.select {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0;
+	font-size: inherit;
+	line-height: 30px;
+	background-color: transparent;
+	background-image: url("../images/sprite.min.svg#arrow-down");
+	background-repeat: no-repeat;
+	background-position: right -6px top 50%;
+	border: none;
+	cursor: pointer;
+	appearance: none;
+
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:active {
+		outline: none;
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		opacity: 0.1;
+	}
+}

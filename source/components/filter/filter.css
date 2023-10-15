@@ -1,0 +1,36 @@
+.filter__set {
+	margin: 0 20px 33px 0;
+	padding: 12px 0 0;
+	border: none;
+	border-top: 2px solid;
+}
+
+.filter__title {
+	float: left;
+	width: 100%;
+	padding: 0 0 20px;
+	font-weight: 700;
+	line-height: 20px;
+}
+
+.filter__range {
+	clear: both;
+}
+
+.filter__list {
+	clear: both;
+	margin: 0;
+}
+
+.filter__item {
+	display: table;
+
+	& + & {
+		margin-top: 17px;
+	}
+}
+
+.filter__submit {
+	width: 100%;
+	margin-top: 5px;
+}

@@ -1,0 +1,7 @@
+<section class="main-header content centerer">
+	<h1 class="main-header__heading">{{ heading }}</h1>
+
+	{% with breadcrumbs | setProp('cssMix', 'main-header__breadcrumbs') %}
+		{% include getComponentPath('breadcrumbs') %}
+	{% endwith %}
+</section>

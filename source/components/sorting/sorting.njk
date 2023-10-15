@@ -1,0 +1,19 @@
+<form class="sorting {{ cssMix }}" action="{{ action }}">
+	{% with select | setProp('cssMix', 'sorting__select') %}
+		{% include getComponentPath('select') %}
+	{% endwith %}
+
+	<ul class="sorting__dirs">
+		{% for dir in directions %}
+			<li class="sorting__dir">
+				<button
+					class="sorting__submit sorting__submit--{{ dir.value }}"
+					name="{{ dirname }}"
+					type="submit"
+					value="{{ dir.value }}"
+					aria-label="{{ dir.label }}"
+				></button>
+			</li>
+		{% endfor %}
+	</ul>
+</form>

@@ -1,0 +1,162 @@
+html {
+	--color-black: #000000;
+	--color-black-60: rgba(0, 0, 0, 0.6);
+	--color-black-50: rgba(0, 0, 0, 0.5);
+	--color-black-30: rgba(0, 0, 0, 0.3);
+	--color-black-10: rgba(0, 0, 0, 0.1);
+	--color-black-alter: #1a1a1a;
+	--color-darker: #363636;
+	--color-dark: #444444;
+	--color-dark-60: rgba(68, 68, 68, 0.6);
+	--color-dark-50: rgba(68, 68, 68, 0.5);
+	--color-dark-30: rgba(68, 68, 68, 0.3);
+	--color-dark-10: rgba(68, 68, 68, 0.1);
+	--color-darker-gray: #c4c4c4;
+	--color-dark-gray-alter: #cccccc;
+	--color-dark-gray: #cecece;
+	--color-gray: #dcdcdc;
+	--color-light-gray-alter: #e5e5e5;
+	--color-light-gray: #ebebeb;
+	--color-light: #f0f0f0;
+	--color-light-90: rgba(240, 240, 240, 0.9);
+	--color-white: #ffffff;
+	--color-white-30: rgba(255, 255, 255, 0.3);
+	--color-white-10: rgba(255, 255, 255, 0.1);
+	--color-yellow-light: #ffe17f;
+	--color-yellow-light-60: rgba(255, 225, 127, 0.6);
+	--color-yellow-light-30: rgba(255, 225, 127, 0.3);
+	--color-yellow-dark: #ffc700;
+	--color-yellow-dark-30: rgba(255, 199, 0, 0.3);
+	--color-select: #af4fff;
+	--color-status-error: #ff3d3d;
+	--color-status-warning: #fd912e;
+	--color-status-success: #08af00;
+	--font-basic: "Rubik", "Arial", sans-serif;
+	--font-accent: "Raleway", "Arial", sans-serif;
+	--focus-outline: 2px solid var(--color-select);
+	min-width: 1240px;
+	overflow-y: scroll;
+	overflow-anchor: none;
+	scroll-behavior: smooth;
+	font-size: 18px;
+	line-height: 1.166667;
+	font-family: var(--font-basic);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	transition-property: color, opacity, background-color, border-color, box-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+a {
+	text-decoration-skip-ink: none;
+	color: inherit;
+}
+
+button {
+	font-family: inherit;
+	color: inherit;
+	border: none;
+}
+
+/* По большей части эти свойства не нужны */
+/* Списки для контентных блоков будут сделаны исходя из дизайна проекта */
+ul,
+ol {
+	padding: 0;
+	list-style: none;
+}
+
+input,
+textarea {
+	box-sizing: border-box;
+	font: inherit;
+	border: none;
+	-webkit-text-fill-color: currentColor;
+	box-shadow: none;
+
+	&:disabled {
+		opacity: 0.3;
+	}
+
+	&:-webkit-autofill {
+		box-shadow: none;
+	}
+
+	&::placeholder {
+		opacity: 0.3;
+	}
+}
+
+input {
+	&[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+}
+
+textarea {
+	overflow: auto;
+	resize: none;
+}
+
+img {
+	max-width: 100%;
+	object-fit: contain;
+}
+
+svg {
+	fill: currentColor;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+wbr::after {
+	content: "\A";
+	white-space: pre;
+}
+
+:focus {
+	outline: var(--focus-outline);
+	outline-offset: 2px;
+
+	@supports selector(:focus-visible) {
+		outline: none;
+	}
+
+	&-visible {
+		outline: var(--focus-outline);
+		outline-offset: 2px;
+	}
+}

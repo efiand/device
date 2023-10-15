@@ -1,0 +1,44 @@
+@import url("../../../node_modules/unimodal/modal.css");
+
+.modal {
+	z-index: 1;
+	background-color: var(--color-light-90);
+}
+
+.modal__inner {
+	width: 760px;
+	margin: auto;
+	padding: 62px 70px;
+	background-color: var(--color-white);
+	border: 10px solid;
+	box-shadow: 0 10px 0 0 var(--color-black-10);
+}
+
+.modal__header {
+	display: grid;
+	grid-template-columns: 1fr 26px;
+	gap: 26px;
+	margin-bottom: 42px;
+}
+
+.modal__heading {
+	margin: 0;
+}
+
+.modal__closer {
+	height: 26px;
+	margin-top: 12px;
+	background-color: transparent;
+	background-image: url("../images/sprite.min.svg#cross");
+	background-repeat: no-repeat;
+	background-position: 50%;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}

@@ -1,0 +1,62 @@
+<form class="form" action="{{ action }}">
+	{% for field in fields %}
+		<p class="form__group form__group--{{ field.type }}">
+			<label class="form__label" for="{{ formId }}-{{ field.name }}">
+				{{ field.label | punctify(':') }}
+			</label>
+
+			{% if field.tooltip %}
+				<span class="form__tooltip" tabindex="0">
+					<span class="form__tooltip-content" role="tooltip">{{ field.tooltip }}</span>
+				</span>
+			{% endif %}
+
+			{% if field.type == 'number' %}
+				<span class="form__controls">
+					<input
+						class="form__field {{ 'form__field--counter' if field.type == 'number' }}"
+						id="{{ formId }}-{{ field.name }}"
+						name="{{ field.name }}"
+						type="number"
+						min="{{ field.min }}"
+						max="{{ field.max }}"
+						step="{{ field.step }}"
+						value="{{ field.value }}"
+						{{ 'required' if field.required }}
+					/>
+					<button class="form__control form__control--step-down" type="button">
+						<span class="visually-hidden">{{ stepDownText }}</span>
+					</button>
+					<button class="form__control form__control--step-up" type="button">
+						<span class="visually-hidden">{{ stepUpText }}</span>
+					</button>
+				</span>
+			{% elif field.type == 'textarea' %}
+				<textarea
+					class="form__field form__field--textarea"
+					id="{{ formId }}-{{ field.name }}"
+					name="{{ field.name }}"
+					placeholder="{{ field.placeholder }}"
+					rows="1"
+				>{{ field.value }}</textarea>
+			{% else %}
+				<input
+					class="form__field"
+					id="{{ formId }}-{{ field.name }}"
+					name="{{ field.name }}"
+					type="{{ field.type }}"
+					value="{{ field.value }}"
+					placeholder="{{ field.placeholder }}"
+					{{ 'required' if field.required }}
+				/>
+				{% if field.message %}
+					<span class="form__message">
+						{{ field.message }}
+					</span>
+				{% endif %}
+			{% endif %}
+		</p>
+	{% endfor %}
+
+	<button class="button form__submit" type="submit">{{ submitText }}</button>
+</form>

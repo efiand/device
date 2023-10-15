@@ -1,0 +1,37 @@
+{% macro setLinkTitle(link) %}
+	{{ link.title }}
+
+	{% if link.hiddenText %}
+		<span class="visually-hidden">{{ link.hiddenText }}</span>
+	{% endif %}
+
+	{% if link.label %}
+		<span class="user-nav__label">{{ link.label }}</span>
+	{% endif %}
+{% endmacro %}
+
+<ul class="user-nav {{ cssMix }}">
+	{% for link in list %}
+		<li class="user-nav__item {{ 'user-nav__item--extended' if link.extend }}">
+			{% if link.href %}
+				<a class="user-nav__link user-nav__link--{{ link.alias }}" href="{{ link.href }}">
+					{{ setLinkTitle(link) }}
+				</a>
+
+				{% if link.extend %}
+					<a class="user-nav__link user-nav__link--extend" href="{{ link.extend.href }}">
+						{{ setLinkTitle(link.extend) }}
+					</a>
+				{% endif %}
+			{% elif link.popover %}
+				<button class="user-nav__link user-nav__link--{{ link.alias }}" type="button">
+					{{ setLinkTitle(link) }}
+				</button>
+
+				{% set cssMix = 'user-nav__popover' %}
+				{% set ctx = link.popover %}
+				{% include getComponentPath(link.alias) %}
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+<div class="pagination">
+	<a class="pagination__ring pagination__ring--prev" href="{{ prev.href }}">
+		{{ prev.title }}
+	</a>
+
+	<ol class="pagination__list">
+		{% for link in list %}
+			<li>
+				<a
+					class="pagination__link {{ 'pagination__link--current' if loop.index == 1 }}"
+					href="{{ link.href }}"
+					{{ 'aria-current="page"' if loop.index == 1 }}
+				>{{ link.title }}</a>
+			</li>
+		{% endfor %}
+	</ol>
+
+	<a class="pagination__ring pagination__ring--next" href="{{ next.href }}">
+		{{ next.title }}
+	</a>
+</div>

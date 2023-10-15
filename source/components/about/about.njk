@@ -1,0 +1,16 @@
+<div class="about {{ cssMix }}">
+	{% for section in list %}
+		<section class="about__section">
+			<h2 class="heading about__heading">{{ section.heading }}</h2>
+
+			<div class="content about__content">{{ section.content }}</div>
+
+			<a
+				class="button about__footlink {{ 'about__footlink--wide' if loop.index === 1 }}"
+				href="{{ section.footLink.href }}"
+			>
+				{{ section.footLink.title }}
+			</a>
+		</section>
+	{% endfor %}
+</div>

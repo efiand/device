@@ -1,0 +1,17 @@
+<div
+	class="range {{ cssMix }} no-js-hidden"
+	data-max="{{ max }}"
+	data-min="{{ min }}"
+	data-step="{{ step }}"
+>
+	{% for item in fields %}
+		<input
+			name="{{ name }}"
+			type="hidden"
+			value="{{ item.value }}"
+			data-title="{{ item.label }}"
+		/>
+	{% endfor %}
+
+	<div class="range__target"></div>
+</div>

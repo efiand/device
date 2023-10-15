@@ -1,0 +1,12 @@
+<section class="modal" data-modal="{{ modalId }}">
+	<div class="modal__inner">
+		<header class="modal__header">
+			<h2 class="heading modal__heading">{{ heading }}</h2>
+			<button class="modal__closer" type="button" data-modal-close="{{ modalId }}">
+				<span class="visually-hidden">{{ closeTitle }}</span>
+			</button>
+		</header>
+
+		{{ slot }}
+	</div>
+</section>

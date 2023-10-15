@@ -1,0 +1,92 @@
+.checker {
+	display: flex;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.checker__input {
+	position: relative;
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	border-radius: 3px;
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+	appearance: none;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		border-radius: inherit;
+	}
+
+	&::before {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 2px solid var(--color-dark-gray-alter);
+		transition: border-color 0.2s ease-in-out;
+	}
+
+	&::after {
+		top: 5px;
+		left: 5px;
+		width: 10px;
+		height: 10px;
+		background-color: currentColor;
+		mask-image: url("../images/sprite.min.svg#tick");
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+	}
+
+	&:checked {
+		&::before {
+			border-color: currentColor;
+		}
+
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&:hover,
+	&:hover + .checker__label {
+		opacity: 0.6;
+	}
+
+	&:active,
+	&:active + .checker__label {
+		opacity: 0.3;
+	}
+
+	&:disabled,
+	&:disabled + .checker__label {
+		opacity: 0.1;
+		cursor: not-allowed;
+	}
+
+	&[type="radio"] {
+		border-radius: 50%;
+
+		&::after {
+			mask-image: url("../images/sprite.min.svg#circle");
+		}
+	}
+}
+
+.checker__label {
+	padding-left: 16px;
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.6;
+	}
+
+	&:active {
+		opacity: 0.3;
+	}
+}

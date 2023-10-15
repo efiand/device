@@ -1,0 +1,17 @@
+<article class="card">
+	<a class="card__overlay" href="{{ href }}">
+		<span class="button card__link">{{ linkTitle }}</span>
+	</a>
+
+	{% with image | setProp('cssMix', 'card__image') %}
+		{% include getComponentPath('picture') %}
+	{% endwith %}
+
+	<h2 class="card__heading">{{ heading }}</h2>
+
+	<p class="card__price">{{ price }}</p>
+
+	{% if label %}
+		<p class="card__label">{{ label }}</p>
+	{% endif %}
+</article>

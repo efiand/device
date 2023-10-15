@@ -1,0 +1,103 @@
+.card {
+	position: relative;
+	display: grid;
+	grid-template-columns: 207px 1fr;
+	gap: 32px;
+}
+
+.card__image {
+	grid-column: span 2;
+}
+
+.card__heading {
+	margin: 0;
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 20px;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.card__price {
+	justify-self: end;
+	margin: 0;
+	color: var(--color-dark);
+	transition: opacity 0.2s ease-in-out;
+}
+
+.card__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	pointer-events: none;
+
+	&::before,
+	& .card__link {
+		position: absolute;
+		opacity: 0;
+		transition: inherit;
+		pointer-events: all;
+	}
+
+	&::before {
+		content: "";
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 380px;
+		background-color: rgba(240, 240, 240, 0.8);
+	}
+
+	&:hover,
+	&:active {
+		&::before,
+		& .card__link {
+			opacity: 1;
+		}
+	}
+
+	&:hover {
+		& ~ .card__heading {
+			opacity: 0.6;
+		}
+	}
+
+	&:active {
+		& ~ .card__heading,
+		& ~ .card__price {
+			opacity: 0.3;
+		}
+
+		& .card__link::before {
+			background-color: var(--color-yellow-dark);
+		}
+	}
+}
+
+.card__link {
+	top: 170px;
+	left: 70px;
+	width: 220px;
+}
+
+.card__label {
+	position: absolute;
+	top: 27px;
+	right: 27px;
+	box-sizing: border-box;
+	min-width: 60px;
+	margin: 0;
+	padding: 17px 6px 18px;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: var(--font-accent);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--color-black-60);
+	border: 2px solid;
+	border-radius: 30px;
+}

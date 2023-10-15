@@ -1,0 +1,11 @@
+.main-header {
+	padding: 36px 60px;
+}
+
+.main-header__heading {
+	margin-bottom: 0;
+}
+
+.main-header__breadcrumbs {
+	margin: 0;
+}

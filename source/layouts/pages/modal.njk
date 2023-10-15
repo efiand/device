@@ -1,0 +1,22 @@
+{% extends 'layouts/main.njk' %}
+
+{% block main %}
+	{% include getComponentPath('main-header') %}
+
+	{% with accentLink | setProp('cssMix', 'centerer') %}
+		{% include getComponentPath('promo-button') %}
+	{% endwith %}
+
+	{% macro getForm() %}
+		{% with form %}
+			{% include getComponentPath('form') %}
+		{% endwith %}
+	{% endmacro %}
+	{% with modal | setProp('slot', getForm()) %}
+		{% include getComponentPath('modal') %}
+	{% endwith %}
+
+	<script>
+		window.addEventListener('DOMContentLoaded', () => document.querySelector('[data-modal-open]').click());
+	</script>
+{% endblock %}

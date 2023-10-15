@@ -1,0 +1,45 @@
+.button {
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 20px;
+	font-family: var(--font-accent);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	background-color: transparent;
+	outline-offset: 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 16px;
+		right: 0;
+		bottom: 16px;
+		left: 0;
+		z-index: -1;
+		background-color: var(--color-yellow-light);
+		transition-property: top, bottom, background-color;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-in-out;
+	}
+
+	&:hover::before {
+		top: 0;
+		bottom: 0;
+	}
+
+	&:active::before {
+		top: 0;
+		bottom: 0;
+		background-color: var(--color-yellow-dark);
+	}
+
+	&:disabled {
+		opacity: 0.3;
+	}
+}

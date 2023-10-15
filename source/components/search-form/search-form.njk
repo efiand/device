@@ -1,0 +1,14 @@
+<form class="search-form {{ cssMix }}" action="{{ action }}">
+	<input
+		class="search-form__field"
+		name="{{ name }}"
+		type="search"
+		value="{{ value }}"
+		{{ 'placeholder=' + placeholder | quotify if placeholder }}
+		aria-label="{{ label }}"
+	/>
+
+	<button class="search-form__submit" type="submit">
+		{{ submitTitle }}
+	</button>
+</form>

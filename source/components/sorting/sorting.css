@@ -1,0 +1,43 @@
+.sorting {
+	display: grid;
+	grid-template-columns: 154px 1fr;
+	gap: 40px;
+}
+
+.sorting__dirs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin: 0;
+}
+
+.sorting__submit {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		margin: auto;
+		border-top: 10px solid;
+		border-right: 5px solid transparent;
+		border-left: 5px solid transparent;
+		opacity: 0.2;
+		transition: inherit;
+	}
+
+	&--asc::before {
+		transform: scaleY(-1);
+	}
+
+	&:hover::before {
+		opacity: 0.5;
+	}
+
+	&:active::before {
+		opacity: 1;
+	}
+}

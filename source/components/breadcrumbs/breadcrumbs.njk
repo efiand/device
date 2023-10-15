@@ -1,0 +1,11 @@
+<ol class="breadcrumbs {{ cssMix }}">
+	{% for link in list %}
+		<li class="breadcrumbs__item">
+			<a
+				class="breadcrumbs__link"
+				{{ 'href=' + link.href if link.href }}
+				{{ 'aria-current="page"' if not link.href }}
+			>{{ link.title }}</a>
+		</li>
+	{% endfor %}
+</ol>

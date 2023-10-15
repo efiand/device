@@ -1,0 +1,27 @@
+<section class="subscribe">
+	<div class="centerer subscribe__inner">
+		<h2 class="heading subscribe__heading">{{ heading }}</h2>
+
+		<div class="content subscribe__content">
+			{{ content }}
+		</div>
+
+		{% with form %}
+			<form class="subscribe__form" action="{{ action }}">
+				<input
+					class="subscribe__field"
+					name="{{ name }}"
+					type="email"
+					placeholder="{{ placeholder }}"
+					aria-label="{{ label }}"
+				/>
+
+				<button class="subscribe__submit" type="submit">
+					{{ submitTitle }}
+				</button>
+			</form>
+		{% endwith %}
+
+		<p class="subscribe__note">{{ note }}</p>
+	</div>
+</section>

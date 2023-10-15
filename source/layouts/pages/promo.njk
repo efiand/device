@@ -1,0 +1,9 @@
+{% extends 'layouts/main.njk' %}
+
+{% block main %}
+	<h1 class="visually-hidden">{{ title }}</h1>
+
+	{% with promo | setProp('cssMix', 'centerer') %}
+		{% include getComponentPath('promo') %}
+	{% endwith %}
+{% endblock %}

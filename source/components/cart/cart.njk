@@ -1,0 +1,28 @@
+<div class="cart {{ cssMix }}">
+	<ul class="cart__list">
+		{% for link in ctx.list %}
+			<li class="cart__item">
+				<a class="cart__link" href="{{ link.href }}">
+					{{ link.title }}
+
+					{% with link.image | setProp('cssMix', 'cart__image') %}
+						{% include getComponentPath('picture') %}
+					{% endwith %}
+				</a>
+				<a class="cart__remover" href="{{ link.hrefToRemove }}">
+					<span class="visually-hidden">{{ ctx.titleToRemove }}</span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<dl class="cart__params">
+		{% for param in ctx.params %}
+			<div class="cart__param">
+				<dt class="cart__value">{{ param.key | punctify(':') }}</dt>
+				<dd class="cart__value">{{ param.value }}</dd>
+			</div>
+		{% endfor %}
+	</dl>
+
+	<a class="cart__button" href="{{ ctx.openLink.href }}">{{ ctx.openLink.title }}</a>
+</div>

@@ -1,0 +1,27 @@
+<form class="filter" action="{{ action }}">
+	{% for set in list %}
+		<fieldset class="filter__set">
+			<legend class="filter__title">{{ set.title }}</legend>
+
+			{% if set.min %}
+				{% with set | setProp('cssMix', 'filter__range')%}
+					{% include getComponentPath("range") %}
+				{% endwith %}
+			{% else %}
+				<ul class="filter__list">
+					{% for item in set.fields %}
+						<li class="filter__item">
+							{% with item | setProp('cssMix', 'filter__checker') %}
+								{% include getComponentPath('checker') %}
+							{% endwith %}
+						</li>
+					{% endfor %}
+					</ul>
+			{% endif %}
+		</fieldset>
+	{% endfor %}
+
+	<button class="button filter__submit" type="submit">
+		{{ sublitTitle }}
+	</button>
+</form>

@@ -1,0 +1,13 @@
+<ul class="social {{ cssMix }}">
+	{% for item in list %}
+		<li>
+			<a
+				class="social__link"
+				href="{{ item.href }}"
+				style="--mask: url(../images/sprite.min.svg#social-{{ item.id }})"
+			>
+				<span class="visually-hidden">{{ item.title }}</span>
+			</a>
+		</li>
+	{% endfor %}
+</ul>

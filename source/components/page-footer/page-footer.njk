@@ -1,0 +1,34 @@
+<footer class="page-footer {{ cssMix }}" style="--logo-mask: url(../{{ logo.src }})">
+	<div class="centerer">
+		{% set cssMix = 'page-footer__logo' %}
+		{% include getComponentPath('logo') %}
+
+		<div class="page-footer__inner">
+			<address class="page-footer__content">
+				{{ address }}
+			</address>
+
+			<nav class="page-footer__nav">
+				{% with mainMenu %}
+					{% include getComponentPath('main-nav') %}
+				{% endwith %}
+			</nav>
+
+			{% with tel %}
+				<p class="page-footer__content page-footer__content--tel">
+					<a href="tel:{{ value }}">{{ shortTitle }} {{ formattedValue }}</a>
+				</p>
+			{% endwith %}
+
+			{% with social | setProp('cssMix', 'page-footer__social') %}
+				{% include getComponentPath('social') %}
+			{% endwith %}
+
+			<a class="page-footer__dev" href="{{ developer.href }}" style="--logo-mask: url(../{{ developer.logo.src }})">
+				{% with developer.logo %}
+					<img src="{{ src }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}">
+				{% endwith %}
+			</a>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,10 @@
+<select
+	class="select {{ cssMix }}"
+	name="{{ name }}"
+>
+	{% for option in options %}
+		<option value="{{ option.value }}">
+			{{ option.title or option.value }}
+		</option>
+	{% endfor %}
+</select>

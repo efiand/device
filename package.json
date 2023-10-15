@@ -1,0 +1,49 @@
+{
+	"browserslist": [
+		"last 6 version",
+		"not dead",
+		"not IE 11"
+	],
+	"devDependencies": {
+		"@allmarkedup/nunjucks-with": "0.1.2",
+		"autoprefixer": "10.4.2",
+		"browser-sync": "2.27.7",
+		"cross-env": "7.0.3",
+		"cssnano": "5.0.15",
+		"del": "6.0.0",
+		"gulp": "4.0.2",
+		"gulp-clean": "0.4.0",
+		"gulp-html-bem-validator": "1.0.5",
+		"gulp-imagemin": "8.0.0",
+		"gulp-postcss": "9.0.1",
+		"gulp-posthtml": "3.0.5",
+		"gulp-rename": "2.0.0",
+		"gulp-svg-sprite": "1.5.0",
+		"gulp-webp": "4.0.1",
+		"htmlnano": "1.1.1",
+		"imagemin-mozjpeg": "10.0.0",
+		"imagemin-pngquant": "9.0.2",
+		"imagemin-svgo": "10.0.1",
+		"nouislider": "15.5.1",
+		"nunjucks": "3.2.3",
+		"postcss-base64": "0.7.1",
+		"postcss-custom-media": "8.0.0",
+		"postcss-easy-import": "3.0.0",
+		"postcss-nested": "5.0.6",
+		"postcss-reporter": "7.0.5",
+		"postcss-sort-media-queries": "4.2.1",
+		"terser-webpack-plugin": "5.3.1",
+		"unimodal": "1.0.0",
+		"vinyl-named": "1.1.0",
+		"webpack": "5.70.0",
+		"webpack-stream": "7.0.0"
+	},
+	"name": "device",
+	"private": true,
+	"scripts": {
+		"build": "cross-env NODE_ENV=production gulp build",
+		"dev": "cross-env NODE_ENV=development gulp",
+		"start": "npm run dev"
+	},
+	"type": "module"
+}

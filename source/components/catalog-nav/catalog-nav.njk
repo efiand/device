@@ -1,0 +1,17 @@
+<nav class="catalog-nav {{ cssMix }}">
+	<button class="catalog-nav__toggler" type="button">
+		{{ title }}
+	</button>
+
+	<ul class="catalog-nav__list">
+		{% for link in list %}
+			<li class="catalog-nav__item">
+				<a
+					class="catalog-nav__link {{ 'catalog-nav__link--current' if link.current }}"
+					href="{{ link.href }}"
+					{{ 'aria-current="page"' if link.current }}
+				>{{ link.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
